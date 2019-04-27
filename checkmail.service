@@ -1,0 +1,11 @@
+[Unit]
+Description=CheckMail
+
+[Service]
+Type=forking
+ExecStart=/usr/lib/checkmail/keepup.py ./usr/lib/checkmail/checkmail.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=checkmail.service 
